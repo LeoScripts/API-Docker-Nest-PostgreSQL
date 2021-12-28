@@ -1,10 +1,10 @@
 {
-  "name": "nestjs-pgsql-api",
+  "name": "api-nestjs-pgsql-docker",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "leandroguitarjesus89@gmail.com",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
