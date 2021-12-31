@@ -21,7 +21,7 @@ import { UserRole } from './user-roles.enum';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './user.entity';
 import { GetUser } from '../auth/get-user.decorator';
-import { FindUsersQueryDto } from '../users/dto/ find-users-query.dto';
+import { FindUsersQueryDto } from '../users/dto/find-users-query.dto';
 
 @Controller('users')
 @UseGuards(AuthGuard(), RolesGuard)

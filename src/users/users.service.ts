@@ -10,7 +10,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './user.entity';
 import { UserRole } from './user-roles.enum';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { FindUsersQueryDto } from '../users/dto/ find-users-query.dto';
+import { FindUsersQueryDto } from './dto/find-users-query.dto';
 
 @Injectable()
 export class UsersService {
