@@ -9,7 +9,7 @@ import { UserRepository } from './users.repository';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './user.entity';
 import { UserRole } from './user-roles.enum';
-import { UpdateUserDto } from '../users/dto/update-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -49,6 +49,15 @@ export class UsersService {
     } catch (error) {
       throw new InternalServerErrorException(
         'Erro ao salvar os dados no banco de dados',
+      );
+    }
+  }
+
+  async deleteUser(userId: string) {
+    const result = await this.userRepository.delete({ id: userId });
+    if (result.affected === 0) {
+      throw new NotFoundException(
+        'Não foi encontrado um usuário com o ID informado',
       );
     }
   }
