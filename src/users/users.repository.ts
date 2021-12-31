@@ -9,7 +9,7 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { CredentialsDto } from '../users/dto/credentials.dto';
-import { FindUsersQueryDto } from '../users/dto/ find-users-query.dto';
+import { FindUsersQueryDto } from './dto/find-users-query.dto';
 
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
