@@ -31,6 +31,7 @@ export class AuthController {
       message: 'Cadastro realizado com sucesso',
     };
   }
+  
 
   @Post('/signin')
   async signIn(
