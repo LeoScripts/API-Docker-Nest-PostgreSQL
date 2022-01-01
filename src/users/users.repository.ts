@@ -9,7 +9,7 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { CredentialsDto } from '../users/dto/credentials.dto';
-import { FindUsersQueryDto } from './dto/find-users-query.dto';
+import { FindUsersQueryDto } from '../users/dto/find-users-query.dto';
 
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
@@ -73,6 +73,14 @@ export class UserRepository extends Repository<User> {
         );
       }
     }
+  }
+
+  async changePassword(id: string, password: string) {
+    const user = await this.findOne(id);
+    user.salt = await bcrypt.genSalt();
+    user.password = await this.hashPassword(password, user.salt);
+    user.recoverToken = null;
+    await user.save();
   }
 
   async checkCredentials(credentialsDto: CredentialsDto): Promise<User> {
