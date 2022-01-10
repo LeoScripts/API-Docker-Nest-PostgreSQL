@@ -1,6 +1,6 @@
 # API Neste JS, Docker, PostgreSQL
 <b>Technologies used</b><br>
-Nest JS | Docker | PostgreSQL | TypeORM | Typescript
+Nest JS | Docker | PostgreSQL | TypeORM | Typescript |Jest | JWT 
 
 ## Project Information
 - Brazil(POrtuguese)
